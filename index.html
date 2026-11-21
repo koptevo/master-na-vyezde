@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1E40AF">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (error) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <title>Ремонт стиральных машин на дому — мастер на выезде</title>
+  <meta name="description" content="Стиралка сломалась? Мастер приезжает к вам, смотрит поломку и называет цену после диагностики. Вызовите мастера в WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <div class="demo-note" role="note">Демо-страница для показа до оплаты · название и телефон заменяются</div>
+
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2 4 13.5h6.2L9.8 22 20 10.2h-6.4L13.5 2Z" fill="currentColor"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.4 11.7a8.4 8.4 0 0 1-12.5 7.3L3 20.2l1.2-4.6a8.4 8.4 0 1 1 16.2-3.9Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.1 8.9c0 3.1 2.5 5.6 5.6 5.6l1-1.8-2.1-1-.9 1.1a5.2 5.2 0 0 1-2-2l1.1-.8-1-2.1Z" fill="currentColor"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.3 4.3L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 15a3 3 0 0 1-3 3H8l-4 3V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v9Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8 9h8M8 12.5h5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M9 21v-7h6v7" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.6 13.4 12 4.8V3H4v8l8.6 8.6a2 2 0 0 0 2.8 0l5.2-5.2a2 2 0 0 0 0-2.8Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="7.8" cy="7.8" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19L12 3Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M12 9v5m0 3h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <header class="site-head">
+    <div class="wrap head-inner">
+      <a class="brand" href="#top" aria-label="Мастер на выезде — наверх">
+        <span class="brand__mark"><svg><use href="#i-bolt"/></svg></span>
+        <span class="brand__text">Мастер<span>на выезде</span></span>
+      </a>
+      <div class="head-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Включить тёмную тему" aria-pressed="false">
+          <svg class="theme-toggle__moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="theme-toggle__sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <span class="theme-toggle__label">Тёмная</span>
+        </button>
+        <a class="btn btn--blue btn--small head-cta" href="#order">Вызвать мастера</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="eyebrow__dot"></span> Ремонт стиральных машин · только выезд</p>
+        <h1 id="hero-title">Стиралка не крутится? <em>Вызовите мастера.</em></h1>
+        <p class="lead">Не везём машину в сервис. Мастер приезжает к вам, смотрит поломку и называет цену после диагностики.</p>
+        <div class="hero__actions">
+          <a class="btn btn--accent" href="https://wa.me/79997564111?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4" target="_blank" rel="noopener">
+            <svg class="btn__icon"><use href="#i-wa"/></svg> Написать в WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="#order">Оставить заявку <svg class="btn__icon"><use href="#i-arrow-down"/></svg></a>
+        </div>
+        <ul class="facts" aria-label="Что важно">
+          <li><svg><use href="#i-check"/></svg> Без офиса и посредников</li>
+          <li><svg><use href="#i-check"/></svg> Цену скажем после осмотра</li>
+          <li><svg><use href="#i-check"/></svg> Время приезда согласуем</li>
+        </ul>
+      </div>
+
+      <div class="hero__art" aria-hidden="true">
+        <svg viewBox="0 0 420 470" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="210" cy="228" r="190" fill="var(--art-bg)"/>
+          <path d="M96 128h228v286a16 16 0 0 1-16 16H112a16 16 0 0 1-16-16V128Z" fill="var(--white)" stroke="var(--art-stroke)" stroke-width="5"/>
+          <path d="M96 128h228v54H96z" fill="var(--blue-50)" stroke="var(--art-stroke)" stroke-width="5"/>
+          <circle cx="126" cy="155" r="9" fill="var(--blue-500)"/>
+          <rect x="152" y="146" width="86" height="18" rx="9" fill="var(--art-stroke)"/>
+          <circle cx="270" cy="155" r="10" fill="var(--accent)"/>
+          <circle cx="210" cy="308" r="88" fill="var(--art-stroke)"/>
+          <circle cx="210" cy="308" r="72" fill="var(--blue-500)"/>
+          <circle cx="210" cy="308" r="59" fill="var(--blue-50)" stroke="var(--art-stroke)" stroke-width="4"/>
+          <path d="M180 288c10-12 30-12 40 0M178 328c14 10 36 10 50-2" stroke="var(--art-detail)" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <rect x="288" y="292" width="14" height="34" rx="7" fill="var(--accent)"/>
+          <path d="M120 430v18M300 430v18" stroke="var(--art-stroke)" stroke-width="8" stroke-linecap="round"/>
+          <g stroke="var(--accent)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M356 92 330 118 338 126 364 100a17 17 0 0 0-24-24l-8 8 26 26"/>
+          </g>
+          <path d="M78 82v-24M66 70h24M358 352v-20M348 342h20" stroke="var(--accent)" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        <div class="hero__badge">только <strong>вызов</strong></div>
+      </div>
+    </section>
+
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <p class="kicker">Как это работает</p>
+        <h2 id="how-title">Три шага до мастера</h2>
+        <div class="steps">
+          <article class="step">
+            <span class="step__num" aria-hidden="true">01</span>
+            <span class="step__icon"><svg><use href="#i-chat"/></svg></span>
+            <h3>Напишите в WhatsApp</h3>
+            <p>Имя, телефон, марку машины и поломку — всё одним сообщением.</p>
+          </article>
+          <article class="step">
+            <span class="step__num" aria-hidden="true">02</span>
+            <span class="step__icon"><svg><use href="#i-home"/></svg></span>
+            <h3>Мастер приедет к вам</h3>
+            <p>Согласуем удобное время. Никакой точки, куда надо везти машину.</p>
+          </article>
+          <article class="step">
+            <span class="step__num" aria-hidden="true">03</span>
+            <span class="step__icon"><svg><use href="#i-tag"/></svg></span>
+            <h3>Цена после диагностики</h3>
+            <p>Сначала смотрим поломку, потом называем сумму — без сюрпризов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="fix" aria-labelledby="fix-title">
+      <div class="wrap">
+        <p class="kicker">Что чиним</p>
+        <h2 id="fix-title">Знакомая поломка?</h2>
+        <div class="problems">
+          <div class="problem"><svg><use href="#i-check"/></svg> Не сливает воду</div>
+          <div class="problem"><svg><use href="#i-check"/></svg> Не отжимает</div>
+          <div class="problem"><svg><use href="#i-check"/></svg> Гудит или вибрирует</div>
+          <div class="problem"><svg><use href="#i-check"/></svg> Не включается</div>
+          <div class="problem"><svg><use href="#i-check"/></svg> Пишет ошибку на дисплее</div>
+          <div class="problem"><svg><use href="#i-check"/></svg> Течёт из-под машины</div>
+        </div>
+        <p class="fix-note">Чиним стиральные машины разных марок и моделей. Например: Bosch, LG, Samsung, Indesit.</p>
+      </div>
+    </section>
+
+    <section class="section" id="why" aria-labelledby="why-title">
+      <div class="wrap">
+        <p class="kicker">Почему выбирают</p>
+        <h2 id="why-title">Просто и без лишнего</h2>
+        <div class="steps">
+          <article class="step step--plain">
+            <span class="step__icon"><svg><use href="#i-home"/></svg></span>
+            <h3>Приезд, а не очередь</h3>
+            <p>Мастер едет к вам. Никакого сервиса, куда нужно тащить технику.</p>
+          </article>
+          <article class="step step--plain">
+            <span class="step__icon"><svg><use href="#i-tag"/></svg></span>
+            <h3>Сумма после осмотра</h3>
+            <p>Не называем цену заочно. Сначала диагностика, потом договорённость.</p>
+          </article>
+          <article class="step step--plain">
+            <span class="step__icon"><svg><use href="#i-wa"/></svg></span>
+            <h3>Один привычный чат</h3>
+            <p>Пишете туда, где уже привыкли. Новые приложения и логины не нужны.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section order" id="order" aria-labelledby="order-title">
+      <div class="wrap order__grid">
+        <div class="order__copy">
+          <p class="kicker">Вызвать мастера</p>
+          <h2 id="order-title">Опишите поломку — свяжемся</h2>
+          <p class="lead">Форма соберёт сообщение и откроет ваш WhatsApp. Ничего оплачивать сейчас не нужно.</p>
+          <p class="order__hint"><svg><use href="#i-check"/></svg> Ответим в том же чате, куда уйдёт заявка.</p>
+        </div>
+
+        <div class="order-card">
+          <form id="leadForm" novalidate>
+            <div class="field">
+              <label for="name">Ваше имя</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" aria-describedby="name-error" required>
+              <p class="error" id="name-error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 999 000-00-00" aria-describedby="phone-error" required>
+              <p class="error" id="phone-error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="brand">Марка машины <span class="optional">не обязательно</span></label>
+              <input id="brand" name="brand" type="text" autocomplete="off" placeholder="Например, Bosch">
+            </div>
+            <div class="field">
+              <label for="issue">Что случилось</label>
+              <textarea id="issue" name="issue" rows="3" placeholder="Не отжимает, пишет ошибку…" aria-describedby="issue-error" required></textarea>
+              <p class="error" id="issue-error" role="alert"></p>
+            </div>
+            <button class="btn btn--accent btn--wide" type="submit" id="submitBtn">
+              <svg class="btn__icon"><use href="#i-wa"/></svg> Отправить в WhatsApp
+            </button>
+            <p class="form-note" id="formStatus" role="status" aria-live="polite">Данные никуда больше не попадут — только в WhatsApp.</p>
+          </form>
+          <p class="form-fallback">Не открылся WhatsApp? <a href="https://wa.me/79997564111" target="_blank" rel="noopener">Напишите напрямую</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <span class="brand__mark"><svg><use href="#i-bolt"/></svg></span>
+        <span class="brand__text">Мастер<span>на выезде</span></span>
+      </div>
+      <p>Ремонт стиральных машин на дому · выезд по записи</p>
+      <a class="footer__link" href="https://wa.me/79997564111" target="_blank" rel="noopener">
+        <svg><use href="#i-wa"/></svg> WhatsApp
+      </a>
+    </div>
+    <p class="footer__demo demo-note">Демо-страница для показа до оплаты. Замените телефон и детали перед публикацией.</p>
+  </footer>
+
+  <div class="mobile-cta">
+    <a class="btn btn--accent" href="#order">Вызвать мастера</a>
+    <a class="mobile-cta__icon" href="https://wa.me/79997564111" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#i-wa"/></svg></a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
