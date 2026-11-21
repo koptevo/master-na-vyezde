@@ -295,7 +295,25 @@ h2{font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.1;letter-spacing:-.035em;f
   .footer{padding-bottom:26px}
 }
 
+/* Анимация при прокрутке: тонкая полоса прогресса и появление блоков */
+.scroll-progress{
+  position:fixed;top:0;left:0;right:0;height:3px;z-index:60;
+  background:transparent;pointer-events:none;
+}
+.scroll-progress__fill{
+  display:block;height:100%;width:0;background:var(--accent);
+  transition:width .12s linear;
+}
+
+.js .reveal{
+  opacity:0;transform:translateY(26px);
+  transition:opacity .65s cubic-bezier(.22,.7,.24,1),transform .65s cubic-bezier(.22,.7,.24,1);
+}
+.js .reveal.is-visible{opacity:1;transform:none}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms !important;animation-duration:.01ms !important}
+  .js .reveal{opacity:1;transform:none}
+  .scroll-progress__fill{transition:none}
 }

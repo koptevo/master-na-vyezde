@@ -26,6 +26,65 @@
     syncThemeButton();
   });
 
+  /* Анимация при прокрутке: появление блоков, параллакс и прогресс */
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var progressFill = document.getElementById('scrollProgressFill');
+    var targets = [];
+
+    ['section .kicker', 'section h2', '.step', '.problem', '.order__copy', '.order-card', '.footer__inner'].forEach(function (selector) {
+      Array.prototype.forEach.call(document.querySelectorAll(selector), function (element) {
+        if (targets.indexOf(element) === -1) targets.push(element);
+      });
+    });
+
+    if (reduce || !('IntersectionObserver' in window)) {
+      targets.forEach(function (element) { element.classList.add('is-visible'); });
+    } else {
+      targets.forEach(function (element) { element.classList.add('reveal'); });
+
+      /* Лёгкая задержка между карточками в сетке */
+      Array.prototype.forEach.call(document.querySelectorAll('.steps, .problems'), function (group) {
+        Array.prototype.forEach.call(group.children, function (card, index) {
+          if (card.classList.contains('reveal')) {
+            card.style.transitionDelay = Math.min(index, 4) * 70 + 'ms';
+          }
+        });
+      });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      targets.forEach(function (element) { observer.observe(element); });
+    }
+
+    var heroArt = document.querySelector('.hero__art');
+    var ticking = false;
+
+    function update() {
+      var y = window.scrollY || window.pageYOffset || 0;
+      var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+
+      if (progressFill) progressFill.style.width = Math.min(100, (y / max) * 100) + '%';
+      if (!reduce && heroArt) heroArt.style.transform = 'translateY(' + Math.min(y, 600) * 0.08 + 'px)';
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    }, { passive: true });
+    update();
+  })();
+
   var WHATSAPP = 'https://wa.me/79997564111';
   var form = document.getElementById('leadForm');
   if (!form) return;

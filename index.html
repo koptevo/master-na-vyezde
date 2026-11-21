@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#1E40AF">
   <meta name="color-scheme" content="light dark">
   <script>
+    document.documentElement.classList.add('js');
     (function () {
       try {
         var saved = localStorage.getItem('theme');
@@ -25,6 +26,8 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__fill" id="scrollProgressFill"></span></div>
 
   <div class="demo-note" role="note">Демо-страница для показа до оплаты · название и телефон заменяются</div>
 
